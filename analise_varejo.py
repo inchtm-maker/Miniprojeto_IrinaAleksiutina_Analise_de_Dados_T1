@@ -133,3 +133,7 @@ print("3. A maioria dos clientes não tem filhos (moda = 0)")
 print("4. Mulheres compram mais que homens (382k vs 351k)")
 print("5. Alimentos é a categoria mais vendida")
 print("6. 75% dos clientes têm menos de 2 filhos")
+
+# 6) Salvando dataframe limpo
+df.to_csv('df_limpo.csv', index=False)
+print("\nArquivo df_limpo.csv salvo com sucesso!")
