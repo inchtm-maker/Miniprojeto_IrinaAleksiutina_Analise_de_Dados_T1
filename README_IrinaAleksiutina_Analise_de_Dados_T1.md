@@ -13,12 +13,12 @@ Turma: Analise_de_Dados_T1
 - `df_limpo.csv` — base de dados limpa
 
 ## O que foi feito
-- Sprint 1: Carregamento e visualização dos dados
-- Sprint 2: Transformação de tipos (strings, integers, datetime)
-- Sprint 3: Limpeza de dados (duplicatas, categorias inválidas)
-- Sprint 4: Estatística descritiva da coluna CL_FHL
-- Sprint 5: Agrupamentos e relatório final
-- Sprint 6: Salvamento do dataframe limpo
+1) Carregamento e visualização dos dados
+2) Transformação de tipos (strings, integers, datetime)
+3) Limpeza de dados (duplicatas, categorias inválidas)
+4) Estatística descritiva da coluna CL_FHL
+5) Agrupamentos e relatório final
+6) Salvamento do dataframe limpo
 
 ## Reflexão sobre ETL e Qualidade de Dados
 ETL significa Extração, Transformação e Carga de dados.
