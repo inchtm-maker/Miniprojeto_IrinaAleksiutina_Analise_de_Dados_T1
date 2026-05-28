@@ -2,10 +2,6 @@
 Aluna: Irina Aleksiutina  
 Turma: Analise_de_Dados_T1
 
-## Descrição do Projeto
-Análise Exploratória de Dados aplicada a uma base de vendas 
-de varejo com 830.000 registros reais de compras.
-
 ## Como executar
 1. Abra a pasta no VsCode
 2. Instale o pandas: `pip install pandas`
@@ -14,13 +10,24 @@ de varejo com 830.000 registros reais de compras.
 ## Estrutura do Projeto
 - `analise_varejo.py` — script principal com toda a análise
 - `Base Varejo.csv` — base de dados original
+- `df_limpo.csv` — base de dados limpa
 
 ## O que foi feito
-1) Carregamento e visualização dos dados
-2) Transformação de tipos (strings, integers, datetime)
-3) Limpeza de dados (duplicatas, categorias inválidas)
-4) Estatística descritiva da coluna CL_FHL
-5) Agrupamentos e relatório final
+- Sprint 1: Carregamento e visualização dos dados
+- Sprint 2: Transformação de tipos (strings, integers, datetime)
+- Sprint 3: Limpeza de dados (duplicatas, categorias inválidas)
+- Sprint 4: Estatística descritiva da coluna CL_FHL
+- Sprint 5: Agrupamentos e relatório final
+- Sprint 6: Salvamento do dataframe limpo
+
+## Reflexão sobre ETL e Qualidade de Dados
+ETL significa Extração, Transformação e Carga de dados.
+Neste projeto aprendemos que dados reais sempre têm problemas:
+- Colunas com tipos incorretos (DATA como string)
+- Categorias inválidas (#N/D)
+- Registros duplicados (96.553 duplicatas!)
+A limpeza dos dados é essencial antes de qualquer análise.
+Dados de qualidade geram insights confiáveis.
 
 ## Insights obtidos
 1. A base contém 830.000 registros com 14 colunas
