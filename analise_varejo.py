@@ -4,9 +4,25 @@
 # Turma: Analise_de_Dados_T1
 # --------------------------------------------
 
+# 1) Importação dos dados
+
+# leitura com csv.DictReader
+import csv
+
+print("Leitura com csv.DictReader (primeiras 3 linhas):")
+with open('Base Varejo.csv', encoding='latin1') as arquivo:
+    leitor = csv.DictReader(arquivo, delimiter=';')
+    for i, linha in enumerate(leitor):
+        if i < 3:
+            print(dict(linha))
+        else:
+            break
+
+
+# Carregamento com pandas para análise
+print("Leitura com Pandas:")
 import pandas as pd
 
-# 1) Importação dos dados
 # Importando o arquivo CSV com dados de vendas
 # sep=';' porque o arquivo usa ponto e vírgula como separador
 # encoding='latin1' para ler caracteres portugueses
@@ -144,4 +160,4 @@ print("6. 75% dos clientes têm menos de 2 filhos")
 
 # 6) Salvando dataframe limpo
 df.to_csv('df_limpo.csv', index=False)
-print("\nArquivo df_limpo.csv salvo com sucesso!")
+print("\nArquivo df_limpo.csv salvo")
