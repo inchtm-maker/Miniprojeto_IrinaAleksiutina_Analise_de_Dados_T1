@@ -113,3 +113,23 @@ print(f"Mínimo:         {df['CL_FHL'].min():.2f}")
 print(f"Contagem:       {df['CL_FHL'].count()}")
 print(f"\nQuartis:")
 print(df['CL_FHL'].quantile([0.25, 0.50, 0.75]))
+
+# 5) Relatório e Documentação
+print("\n5) RELATÓRIO FINAL")
+
+# Agrupamento 1: Total de compras por Gênero
+print("1. Total de compras por Gênero:")
+print(df.groupby('CL_GENERO')['CO_ID'].count())
+
+# Agrupamento 2: Total de compras por Categoria
+print("\n2. Total de compras por Categoria:")
+print(df.groupby('PR_CAT')['CO_ID'].count().sort_values(ascending=False))
+
+# Conclusões finais
+print("\nCONCLUSÕES")
+print("1. A base contém 830.000 registros com 14 colunas")
+print("2. Foram removidas 96.553 duplicatas")
+print("3. A maioria dos clientes não tem filhos (moda = 0)")
+print("4. Mulheres compram mais que homens (382k vs 351k)")
+print("5. Alimentos é a categoria mais vendida")
+print("6. 75% dos clientes têm menos de 2 filhos")
