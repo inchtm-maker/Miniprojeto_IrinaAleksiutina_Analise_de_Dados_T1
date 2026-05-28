@@ -13,7 +13,7 @@ import pandas as pd
 df = pd.read_csv('Base Varejo.csv', sep=';', encoding='latin1')
 
 # Mostrando informações básicas da base
-print("INFORMAÇÕES BÁSICAS")
+print("1) INFORMAÇÕES BÁSICAS")
 print(f"Número de registros: {df.shape[0]}")
 print(f"Número de colunas: {df.shape[1]}")
 print("\nColunas e tipos de dados:")
@@ -27,7 +27,7 @@ df['CL_GENERO'] = df['CL_GENERO'].str.strip().str.upper()
 df['PR_CAT'] = df['PR_CAT'].str.strip().str.upper()
 df['PR_NOME'] = df['PR_NOME'].str.strip().str.upper()
 df['CL_SEG'] = df['CL_SEG'].str.strip().str.upper()
-print("\nTRANSFORMAÇÃO DE DADOS")
+print("\n2) TRANSFORMAÇÃO DE DADOS")
 print("Strings limpas!")
 
 # Removendo colunas Float desnecessárias
@@ -51,3 +51,50 @@ print(df.dtypes)
 print("\nPrimeiras 5 linhas:")
 print(df.head())
 
+# 3) Limpeza de Nulos e Duplicatas
+print("\n3)LIMPEZA DE DADOS")
+
+# Verificando valores nulos por coluna
+print("Valores nulos por coluna:")
+print(df.isnull().sum())
+
+# Verificando duplicatas
+print(f"\nNúmero de duplicatas: {df.duplicated().sum()}")
+
+# Verificando valores únicos
+print("\nValores únicos de CO_ID:")
+print(df['CO_ID'].unique())
+
+print("\nValores únicos de CL_ID:")
+print(df['CL_ID'].unique())
+
+print("\nValores únicos de CL_GENERO:")
+print(df['CL_GENERO'].unique())
+
+print("\nValores únicos de CL_EC:")
+print(df['CL_EC'].unique())
+
+print("\nValores únicos de CL_FHL:")
+print(df['CL_FHL'].unique())
+
+print("\nValores únicos de CL_SEG:")
+print(df['CL_SEG'].unique())
+
+print("\nValores únicos de PR_ID:")
+print(df['PR_ID'].unique())
+
+print("\nValores únicos de PR_CAT:")
+print(df['PR_CAT'].unique())
+
+print("\nValores únicos de PR_NOME:")
+print(df['PR_NOME'].unique())
+
+# Corrigindo categoria inválida #N/D
+df['PR_CAT'] = df['PR_CAT'].replace('#N/D', 'Sem Categoria')
+print("\nCategoria #N/D substituída por 'Sem Categoria'!")
+
+# Removendo duplicatas
+duplicatas = df.duplicated().sum()
+df = df.drop_duplicates()
+print(f"Duplicatas removidas: {duplicatas}")
+print(f"Registros após limpeza: {df.shape[0]}")
