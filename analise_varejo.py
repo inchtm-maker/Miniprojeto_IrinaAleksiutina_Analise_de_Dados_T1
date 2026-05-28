@@ -98,3 +98,18 @@ duplicatas = df.duplicated().sum()
 df = df.drop_duplicates()
 print(f"Duplicatas removidas: {duplicatas}")
 print(f"Registros após limpeza: {df.shape[0]}")
+
+# 4) Estatística Descritiva
+# Calculando estatísticas da coluna CL_FHL (Número de filhos)
+print("\n4) ESTATÍSTICA DESCRITIVA")
+print("Estatísticas da coluna CL_FHL (Número de filhos):\n")
+
+print(f"Média:          {df['CL_FHL'].mean():.2f}")
+print(f"Mediana:        {df['CL_FHL'].median():.2f}")
+print(f"Desvio padrão:  {df['CL_FHL'].std():.2f}")
+print(f"Moda:           {df['CL_FHL'].mode()[0]:.2f}")
+print(f"Máximo:         {df['CL_FHL'].max():.2f}")
+print(f"Mínimo:         {df['CL_FHL'].min():.2f}")
+print(f"Contagem:       {df['CL_FHL'].count()}")
+print(f"\nQuartis:")
+print(df['CL_FHL'].quantile([0.25, 0.50, 0.75]))
