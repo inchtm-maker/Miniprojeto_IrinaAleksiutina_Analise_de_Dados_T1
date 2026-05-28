@@ -89,9 +89,17 @@ print(df['PR_CAT'].unique())
 print("\nValores únicos de PR_NOME:")
 print(df['PR_NOME'].unique())
 
-# Corrigindo categoria inválida #N/D
-df['PR_CAT'] = df['PR_CAT'].replace('#N/D', 'Sem Categoria')
-print("\nCategoria #N/D substituída por 'Sem Categoria'!")
+# Tratamento de categorias inválidas com if/else
+def tratar_categoria(valor):
+    if valor == '#N/D':
+        return 'Sem Categoria'
+    elif valor is None or str(valor) == 'nan':
+        return 'Sem Categoria'
+    else:
+        return valor
+
+df['PR_CAT'] = df['PR_CAT'].apply(tratar_categoria)
+print("\nCategorias inválidas tratadas com if/else!")
 
 # Removendo duplicatas
 duplicatas = df.duplicated().sum()
