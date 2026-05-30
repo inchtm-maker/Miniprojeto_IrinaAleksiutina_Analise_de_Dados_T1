@@ -9,7 +9,7 @@
 # leitura com csv.DictReader
 import csv
 
-print("Leitura com csv.DictReader (primeiras 3 linhas):")
+print("\nLeitura com csv.DictReader (primeiras 3 linhas):")
 with open('Base Varejo.csv', encoding='latin1') as arquivo:
     leitor = csv.DictReader(arquivo, delimiter=';')
     for i, linha in enumerate(leitor):
@@ -20,7 +20,7 @@ with open('Base Varejo.csv', encoding='latin1') as arquivo:
 
 
 # Carregamento com pandas para análise
-print("Leitura com Pandas:")
+print("\nLeitura com Pandas:")
 import pandas as pd
 
 # Importando o arquivo CSV com dados de vendas
@@ -29,7 +29,7 @@ import pandas as pd
 df = pd.read_csv('Base Varejo.csv', sep=';', encoding='latin1')
 
 # Mostrando informações básicas da base
-print("1) INFORMAÇÕES BÁSICAS")
+print("\n1) INFORMAÇÕES BÁSICAS")
 print(f"Número de registros: {df.shape[0]}")
 print(f"Número de colunas: {df.shape[1]}")
 print("\nColunas e tipos de dados:")
