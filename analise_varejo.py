@@ -151,12 +151,13 @@ print(df.groupby('PR_CAT')['CO_ID'].count().sort_values(ascending=False))
 
 # Conclusões finais
 print("\nCONCLUSÕES")
-print("1. A base contém 830.000 registros com 14 colunas")
-print("2. Foram removidas 96.553 duplicatas")
-print("3. A maioria dos clientes não tem filhos (moda = 0)")
-print("4. Mulheres compram mais que homens (382k vs 351k)")
-print("5. Alimentos é a categoria mais vendida")
-print("6. 75% dos clientes têm menos de 2 filhos")
+print("1. A base original contém 830.000 registros com 14 colunas")
+print("2. Após limpeza: 733.447 registros com 10 colunas")
+print("3. Foram removidas 96.553 duplicatas")
+print("4. A maioria dos clientes não tem filhos (moda = 0)")
+print("5. Mulheres compram mais que homens (382k vs 351k)")
+print("6. Alimentos é a categoria mais vendida (384.197 compras)")
+print("7. 75% dos clientes têm menos de 2 filhos")
 
 # 6) Salvando dataframe limpo
 df.to_csv('df_limpo.csv', index=False)
