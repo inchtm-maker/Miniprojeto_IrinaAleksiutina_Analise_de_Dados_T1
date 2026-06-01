@@ -67,6 +67,18 @@ print(df.dtypes)
 print("\nPrimeiras 5 linhas:")
 print(df.head())
 
+# Validando a regra do identificador de número de compra
+print("\nValidando identificador de compra (CO_ID) e separando registros:")
+# Organizando e separando os registros temporalmente e por ID da compra
+df = df.sort_values(by=['CO_ID', 'DATA'])
+
+# Verificando se existem compras com múltiplos itens
+itens_por_compra = df['CO_ID'].value_counts()
+compras_multiplas = (itens_por_compra > 1).sum()
+
+print(f"Regra validada: Os registros foram separados e ordenados por número de compra.")
+print(f"Existem {compras_multiplas} compras que contêm mais de um item registrado.")
+
 # 3) Limpeza de Nulos e Duplicatas
 print("\n3)LIMPEZA DE DADOS")
 
