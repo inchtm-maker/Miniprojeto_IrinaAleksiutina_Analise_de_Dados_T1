@@ -117,6 +117,14 @@ def tratar_categoria(valor):
 df['PR_CAT'] = df['PR_CAT'].apply(tratar_categoria)
 print("\nCategorias inválidas tratadas com if/else!")
 
+# Tratamento de nulos das dimensões físicas
+print("\nVerificando nulos em dimensões físicas:")
+# A base Varejo fornecida não possui colunas de dimensões físicas (como peso, altura ou volume).
+# Portanto, a limpeza de nulos focou apenas nas variáveis categóricas e identificadores existentes.
+# Se existisse uma coluna de 'PESO', usaríamos algo como: df['PESO'] = df['PESO'].fillna(df['PESO'].mean())
+print("Justificativa: Não há colunas de dimensões físicas na base. Nenhuma imputação numérica foi necessária.")
+
+
 # Removendo duplicatas
 duplicatas = df.duplicated().sum()
 df = df.drop_duplicates()
